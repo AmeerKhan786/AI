@@ -27,3 +27,11 @@ Aligned the Command Centre to the user's selected direction: integrate improveme
 
 ## Not claimed
 No interactive real-device Android/browser test was performed in this environment. The user should retain a JSON backup before replacing the live app and verify on the installed PWA.
+
+
+## v5.1 maintenance QA
+- Updated README cache documentation to match `ai-data-command-centre-v5-1`.
+- Added `.github/workflows/quality-checks.yml` to validate required PWA files, JavaScript syntax, regression tests, JSON parsing, and roadmap structure on pushes / pull requests to `main`.
+- Expanded `test-app.cjs` to cover schedule boundaries, unique lesson dates, render side effects, lesson status validation, malformed backup data, date validation, numeric clamping, unsafe URL filtering, streaks, averages and leap-year month calculations.
+- This workflow is a quality gate for the test suite; GitHub Pages branch-based publishing may still deploy independently. To strictly block publishing on failed checks, Pages must be migrated to a workflow-based deployment pipeline.
+- No interactive Android device test was performed.

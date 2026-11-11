@@ -7,7 +7,7 @@ A mobile-first, installable PWA for tracking the supplied 100-Lesson AI + Data E
 1. Keep all app files in the repository root: `index.html`, `app.js`, `style.css`, `manifest.webmanifest`, `sw.js`, `lessons.json`, and `icon.svg`, `icon-192.png`, and `icon-512.png`.
 2. Upload the new files to the same repository and choose **Commit changes**. Do not upload the ZIP as the only file.
 3. GitHub Pages should remain configured as **Deploy from a branch → main → /(root)**.
-4. Wait for the Pages deployment to finish, then reload the site. The service-worker cache was bumped to v4 so the updated assets can replace the previous cache.
+4. Wait for the Pages deployment to finish, then reload the site. The service-worker cache is versioned independently from the app release. For v5.1 it is `ai-data-command-centre-v5-1`; the new worker removes only older caches belonging to this app.
 5. If the installed app still shows the old version, fully close it, open the website in Chrome, reload once while online, then reopen the installed app.
 
 ## Install on Android
@@ -32,8 +32,14 @@ The schedule follows the supplied document: Block 1 is 14 Nov 2026–8 Feb 2027 
 
 ## QA and changes
 
+Run the local checks with `node --check app.js` and `node test-app.cjs`. GitHub Actions runs these checks, validates the PWA files and roadmap JSON, and checks the 100-lesson / 7-phase structure on pushes and pull requests to `main`. A green quality-check workflow means these automated checks passed; it does not replace real-device browser testing.
+
 See `QA_REPORT.md` for the audit scope, fixes, automated checks and remaining limitations. See `CHANGELOG.md` for version history.
 
 
 ### v5 roadmap upgrades
 The original 100 lessons remain unchanged in their core Learn / Build / Done content and schedule. Optional upgrades are shown inside selected lesson details under “Optional roadmap upgrade — not a new lesson”. They strengthen software engineering, ML/deep-learning literacy, AI application engineering, RAG quality/security and production operations without increasing the lesson count or daily target. The Projects page includes additional portfolio tracks for an AI data analysis API, an ML prediction pipeline and governed enterprise RAG.
+
+
+### v5.1 maintenance release
+This release corrects the service-worker cache documentation and adds GitHub Actions quality checks. The workflow validates required files, JavaScript syntax, regression tests, JSON validity, and the 100-lesson / 7-phase roadmap structure. It does not change the lesson content, schedule, or local progress storage format.

@@ -22,3 +22,11 @@
 - Added portfolio tracks for an AI data analysis API, an ML prediction pipeline and governed enterprise RAG; reframed the capstone as a production AI data platform.
 - Kept enhancements optional and outside the 100-lesson completion count.
 - Bumped service-worker cache to v5.
+
+
+## v5.1 — repository quality and maintenance
+- Corrected README cache-version guidance to match the service worker.
+- Added GitHub Actions quality checks for required PWA files, JavaScript syntax, regression tests, JSON validity and roadmap structure.
+- Expanded regression coverage for roadmap dates, lesson status validation, backup normalization, unsafe URLs, analytics edge cases and render side effects.
+- Bumped the app-specific service-worker cache to `ai-data-command-centre-v5-1`.
+- No changes to the 100 lessons, 7 phases, schedule, or local-storage key.
