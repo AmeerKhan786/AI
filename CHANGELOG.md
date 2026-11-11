@@ -14,3 +14,11 @@
 ## v3 — first QA pass
 - Separated lesson status from daily checklist state.
 - Improved backup validation, storage errors, navigation, project evidence, URL safety, download handling, keyboard access and offline cache behavior.
+
+
+## v5 — Roadmap alignment update
+- Preserved all original 100 lesson titles, phases, dates, Learn/Build/Done instructions and checkpoint flags.
+- Added clearly labelled optional enhancements inside selected lessons: Python quality/testing, API engineering, PyTorch/deep-learning foundations, transformer internals, robust LLM application patterns, advanced RAG retrieval/evaluation, agent security/observability and production deployment.
+- Added portfolio tracks for an AI data analysis API, an ML prediction pipeline and governed enterprise RAG; reframed the capstone as a production AI data platform.
+- Kept enhancements optional and outside the 100-lesson completion count.
+- Bumped service-worker cache to v5.

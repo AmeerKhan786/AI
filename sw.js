@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-data-command-centre-v4';
+const CACHE_NAME = 'ai-data-command-centre-v5';
 const APP_FILES = [
   './',
   './index.html',

@@ -33,3 +33,7 @@ The schedule follows the supplied document: Block 1 is 14 Nov 2026–8 Feb 2027 
 ## QA and changes
 
 See `QA_REPORT.md` for the audit scope, fixes, automated checks and remaining limitations. See `CHANGELOG.md` for version history.
+
+
+### v5 roadmap upgrades
+The original 100 lessons remain unchanged in their core Learn / Build / Done content and schedule. Optional upgrades are shown inside selected lesson details under “Optional roadmap upgrade — not a new lesson”. They strengthen software engineering, ML/deep-learning literacy, AI application engineering, RAG quality/security and production operations without increasing the lesson count or daily target. The Projects page includes additional portfolio tracks for an AI data analysis API, an ML prediction pipeline and governed enterprise RAG.
