@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ai-data-command-centre-v3';
+const CACHE_NAME = 'ai-data-command-centre-v4';
 const APP_FILES = [
   './',
   './index.html',
@@ -6,7 +6,9 @@ const APP_FILES = [
   './app.js',
   './lessons.json',
   './manifest.webmanifest',
-  './icon.svg'
+  './icon.svg',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -20,7 +22,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key.startsWith('ai-data-command-centre-') && key !== CACHE_NAME).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
