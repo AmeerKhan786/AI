@@ -1,0 +1,41 @@
+
+name: Quality Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check JavaScript syntax
+        run: node --check app.js
+
+      - name: Run regression tests
+        run: node test-app.cjs
+
+      - name: Validate roadmap JSON
+        run: node -e "const d=require('./lessons.json'); if(!Array.isArray(d)||d.length!==100) process.exit(1); console.log('100 lessons verified')"
+
+      - name: Verify required PWA files
+        run: |
+          for f in index.html app.js style.css lessons.json sw.js manifest.webmanifest icon.svg icon-192.png icon-512.png; do
+            test -s "$f" || exit 1
+          done
+          echo "PWA files verified"
+          
