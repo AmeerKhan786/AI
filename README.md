@@ -1,27 +1,31 @@
 # AI + Data Engineering Command Centre
 
-A mobile-first, installable PWA for the 100-Lesson AI + Data Engineering roadmap.
+A mobile-first, installable PWA for tracking the supplied 100-Lesson AI + Data Engineering roadmap.
 
-## Features
-- Daily execution log: Learn / Build / Evidence / Review checklist, hours, energy, focus, confidence, daily promise and reflection.
-- 100-lesson roadmap with source-derived Learn, Build and Done-when criteria.
-- Weekly retrospective with execution ledger, hour target and next-week commitment.
-- Monthly retrospective with capability, portfolio evidence, reality check and next-month outcome.
-- Analytics: weekly study-hours trend, monthly hours, phase progress, streaks, activity heatmap and quality signals.
-- Accountability contract and honest daily check-ins.
-- Project evidence tracker for mini-ETL, lakehouse, RAG, data agent and capstone.
-- Local-first storage, JSON export/import, offline service worker and installable manifest.
+## Deploy / update on GitHub Pages
 
-## Run locally
-Serve this directory over localhost (not by opening the HTML file directly), e.g.
-`python -m http.server 8000`
-Then open `http://localhost:8000`.
+1. Keep all app files in the repository root: `index.html`, `app.js`, `style.css`, `manifest.webmanifest`, `sw.js`, `lessons.json`, and `icon.svg`.
+2. Upload the new files to the same repository and choose **Commit changes**. Do not upload the ZIP as the only file.
+3. GitHub Pages should remain configured as **Deploy from a branch → main → /(root)**.
+4. Wait for the Pages deployment to finish, then reload the site. The service-worker cache was bumped to v3 so the updated assets can replace the previous cache.
+5. If the installed app still shows the old version, fully close it, open the website in Chrome, reload once while online, then reopen the installed app.
 
 ## Install on Android
-Deploy the folder to an HTTPS static host (GitHub Pages works), open the URL in Chrome, then choose Install app / Add to Home screen.
 
-## Data and privacy
-Progress is stored in this browser's localStorage. It is not synchronised across devices. Export JSON backups regularly. Do not clear browser site data unless you have a backup.
+Open the GitHub Pages URL in Chrome and use **⋮ → Install app** (or **Add to Home screen**, depending on Chrome version).
+
+## Progress and privacy
+
+- Progress is stored in this browser's local storage. It is not synced to another phone or browser.
+- Export a JSON backup regularly, especially before updating, clearing browser data, or changing devices.
+- Import validates the backup structure and normalizes older app data before replacing current progress.
+- This app does not send your journal, study hours, or notes to a server.
 
 ## Roadmap schedule
-Block 1 starts 14 Nov 2026 and runs through 8 Feb 2027. Sundays are catch-up days. Block 2 includes re-entry and extra days from the supplied roadmap; lesson dates are mapped to the schedule in that document. The date plan is editable as a planning reference, but lesson completion is independent of the calendar.
+
+The schedule follows the supplied document: Block 1 is 14 Nov 2026–8 Feb 2027 (Lessons 1–74, Sundays reserved for catch-up); break is 9 Feb–11 Mar 2027; Block 2 is 12 Mar–30 Apr 2027, with re-entry and extra build days. Lesson dates are a fixed plan, not a movable start-date setting.
+
+## Known limitations
+
+- No cloud sync, push reminders, partner notifications, or AI tutor integration.
+- The app is a tracker; it does not verify GitHub commits or independently grade lesson outcomes.
